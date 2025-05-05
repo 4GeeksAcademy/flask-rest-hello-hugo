@@ -45,6 +45,28 @@ def handle_hello():
 
     return jsonify(response_body), 200
 
+@app.route('/user', methods=['POST'])
+def add_new_user():
+     request_body = request.get_json()
+     return jsonify(request_body), 200
+
+@app.route('/Planets', methods=['GET'])
+def handle_planets():
+
+    response_body = {
+        "msg": "Hello, this is your GET /planets response "
+    }
+
+    return jsonify(response_body), 200
+
+@app.route('/Charater', methods=['GET'])
+def handle_character():
+
+    response_body = {
+        "msg": "Hello, this is your GET /Character response "
+    }
+
+    return jsonify(response_body), 200
 # this only runs if `$ python src/app.py` is executed
 if __name__ == '__main__':
     PORT = int(os.environ.get('PORT', 3000))
